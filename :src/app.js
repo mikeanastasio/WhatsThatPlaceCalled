@@ -17,11 +17,11 @@ app.get('/', (req, res) => {
     res.render('homepage');
 });
 
-app.get('/', (req, res) => {
+app.get('/signIn', (req, res) => {
     res.render('homepage');
 });
 
-app.get('/', (req, res) => {
+app.get('/signUp', (req, res) => {
     res.render('homepage');
 });
 

@@ -1,55 +1,47 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(___TODO__: your project name_)
-
 # Nameless Final Project 
 
 ## Overview
 
 (___TODO__: a brief one or two paragraph, high-level description of your project_)
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+Finding where to eat your next meal is always a struggle, especially if you live in a big city with so many options, but we all walk by places that seem interesting and then forget about them ten minutes later or go somewhere and enjoy it but never go back. This web app is meant to mitagate that. It will let you aggregate all the places you see, have been to, or otherwise. 
 
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
-
+The user will be able to sign in and see their lists of places that they've been to and enjoyed or places they thought seemed interesting but haven't been able to go to yet. At anytime the user can quickly come in and look through their lists of places or add a new place to any list they choose. They will also have a spot to write their own personalized description for themselves so future them will be able to more easily remember the place that they are looking at.
 
 ## Data Model
 
-(___TODO__: a description of your application's data and their relationships to each other_) 
+The application will store Users and lists of places.
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(___TODO__: sample documents_)
+* Users can have multiple lists of places based on whether they are new restaurants or ones they have previously been to.
+* Each place will store it's name, location, and description as well as any other necessary information
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
-  hash: // a password hash,
-  lists: // an array of references to List documents
+  username: 'Mike Anastasio'
+  hash: //password hash,
+  email: 'ma4976@nyu.edu',
+  favoriteColor: 'blue'
+  placesToGo: //array of restaurants they are looking to go to,
+  placesBeen: //an arraty of restaurants they have already been to
 }
 ```
 
-An Example List with Embedded Items:
+An Example Place:
 
 ```javascript
 {
-  user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+  name: 'Sweet restaurant',
+  description: 'Looked neat outside!',
+  timePosted: '2018-11-07',
+  address: '1 University Place, New York, NY 10003',
+  hasBeen: false
 }
 ```
 
 
-## [Link to Commented First Draft Schema](db.js) 
+## [Link to Commented First Draft Schema](/:src/db.js) 
 
 (___TODO__: create a first draft of your Schemas in db.js and link to it_)
 
