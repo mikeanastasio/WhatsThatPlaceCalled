@@ -17,12 +17,12 @@ app.get('/', (req, res) => {
     res.render('homepage');
 });
 
-app.get('/signIn', (req, res) => {
-    res.render('homepage');
+app.get('/login', (req, res) => {
+    res.render('login');
 });
 
-app.get('/signUp', (req, res) => {
-    res.render('homepage');
+app.get('/place', (req, res) => {
+    res.render('place');
 });
 
 app.listen(3000);
