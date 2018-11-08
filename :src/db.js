@@ -3,21 +3,22 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
     username: String,
-    password: String,
+    hash: String,
     email: String,
     favoriteColor: String,
-    posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
+    placesToGo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Place'}],
+    placesBeen: [{type: mongoose.Schema.Types.ObjectId, ref: 'Place'}]
 });
 
-const postSchema = new mongoose.Schema({
-    photoUrl: String,
+const placeSchema = new mongoose.Schema({
+    name: String,
     description: String,
     timePosted: String,
-    longitude: String,
-    latitude: String
+    address: String,
+    hasBeen: boolean
 });
 mongoose.model("User", userSchema);
-mongoose.model("Post", postSchema);
+mongoose.model("Place", placeSchema);
 
 //connect
 mongoose.connect('mongodb://localhost/final', { useNewUrlParser: true });
