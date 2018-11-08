@@ -55,7 +55,7 @@ An Example Place:
 
 /userSlug/placeSlug - page for showing all information about a specific place
 
-![list](documentation/place.jpg)
+![list](Documentation/place.jpg)
 
 ## Site map
 
