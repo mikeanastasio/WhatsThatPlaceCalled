@@ -1,8 +1,6 @@
-# Nameless Final Project 
+# What's that place?
 
 ## Overview
-
-(___TODO__: a brief one or two paragraph, high-level description of your project_)
 
 Finding where to eat your next meal is always a struggle, especially if you live in a big city with so many options, but we all walk by places that seem interesting and then forget about them ten minutes later or go somewhere and enjoy it but never go back. This web app is meant to mitagate that. It will let you aggregate all the places you see, have been to, or otherwise. 
 
@@ -43,23 +41,21 @@ An Example Place:
 
 ## [Link to Commented First Draft Schema](/:src/db.js) 
 
-(___TODO__: create a first draft of your Schemas in db.js and link to it_)
-
 ## Wireframes
 
 (___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
 
-/list/create - page for creating a new shopping list
+/ - page with main views of all current list for a user when already signed in
 
-![list create](documentation/list-create.png)
+![list create](Documentation/main.jpg)
 
-/list - page for showing all shopping lists
+/signin - page for sign in and sign up. The first page that will display if the user is not already signed in
 
-![list](documentation/list.png)
+![list](Documentation/signIn.png)
 
-/list/slug - page for showing specific shopping list
+/userSlug/placeSlug - page for showing all information about a specific place
 
-![list](documentation/list-slug.png)
+![list](documentation/place.png)
 
 ## Site map
 
