@@ -22,7 +22,7 @@ An Example User:
   email: 'ma4976@nyu.edu',
   favoriteColor: 'blue'
   placesToGo: //array of restaurants they are looking to go to,
-  placesBeen: //an arraty of restaurants they have already been to
+  placesBeen: //an array of restaurants they have already been to
 }
 ```
 
@@ -39,31 +39,33 @@ An Example Place:
 ```
 
 
-## [Link to Commented First Draft Schema](/:src/db.js) 
+## [Link to Commented First Draft Schema](/src/db.js) 
 
 ## Wireframes
-
-(___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
 
 / - page with main views of all current list for a user when already signed in
 
 ![list create](Documentation/main.jpg)
 
+
+
 /signin - page for sign in and sign up. The first page that will display if the user is not already signed in
 
 ![list](Documentation/signIn.jpg)
 
+
+
 /userSlug/placeSlug - page for showing all information about a specific place
 
 ![list](Documentation/place.jpg)
+
+
 
 ## Site map
 
 ![sitemap](Documentation/sitemap.png)
 
 ## User Stories or Use Cases
-
-(___TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://www.mongodb.com/download-center?jmp=docs&_ga=1.47552679.1838903181.1489282706#previous)_)
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
@@ -74,8 +76,6 @@ An Example Place:
 7. as a user, I can completely delete places from either list
 
 ## Research Topics
-
-(___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
 
 * (4 points) Integrate user authentication
     * I'm going to be using passport for user authentication
@@ -88,11 +88,9 @@ An Example Place:
 * May add more as development begins when necessary
 8 total points
 
-## [Link to Initial Main Project File](/:src/app.js) 
+## [Link to Initial Main Project File](/src/app.js) 
 
 ## Annotations / References Used
-
-(___TODO__: list any tutorials/references/etc. that you've based your code off of_)
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
 2. [Bootstrap docs](http://getbootstrap.com/docs/4.1/getting-started/introduction/)
