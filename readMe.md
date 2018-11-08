@@ -59,9 +59,7 @@ An Example Place:
 
 ## Site map
 
-(___TODO__: draw out a site map that shows how pages are related to each other_)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![sitemap](Documentation/sitemap.png)
 
 ## User Stories or Use Cases
 
@@ -92,7 +90,7 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
 
 
-## [Link to Initial Main Project File](app.js) 
+## [Link to Initial Main Project File](/:src/app.js) 
 
 (___TODO__: create a skeleton Express application with a package.json, app.js, views folder, etc. ... and link to your initial app.js_)
 
