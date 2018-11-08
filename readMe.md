@@ -51,11 +51,11 @@ An Example Place:
 
 /signin - page for sign in and sign up. The first page that will display if the user is not already signed in
 
-![list](Documentation/signIn.png)
+![list](Documentation/signIn.jpg)
 
 /userSlug/placeSlug - page for showing all information about a specific place
 
-![list](documentation/place.png)
+![list](documentation/place.jpg)
 
 ## Site map
 
