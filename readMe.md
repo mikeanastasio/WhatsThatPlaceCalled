@@ -67,10 +67,11 @@ An Example Place:
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+3. as a user, I can create a new place to add to the list
+4. as a user, I can view all of the lists of places on one page
+5. as a user, I can move places from one list to the other
+6. as a user, I can cross off places from my lists if I do not like the place
+7. as a user, I can completely delete places from either list
 
 ## Research Topics
 
@@ -91,8 +92,6 @@ An Example Place:
 
 
 ## [Link to Initial Main Project File](/:src/app.js) 
-
-(___TODO__: create a skeleton Express application with a package.json, app.js, views folder, etc. ... and link to your initial app.js_)
 
 ## Annotations / References Used
 
