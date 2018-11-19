@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const mongoose = require('mongoose');
-require( './db' );
+//const mongoose = require('mongoose');
+//require( './db' );
 
 const publicPath = path.resolve(__dirname, 'public');
 var port = process.env.PORT || 8080;
