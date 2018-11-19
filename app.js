@@ -4,6 +4,9 @@ const app = express();
 const mongoose = require('mongoose');
 require( './db' );
 
+const User = mongoose.model('User');
+const Place = mongoose.model('Place');
+
 const publicPath = path.resolve(__dirname, 'public');
 var port = process.env.PORT || 8080;
 //basic express middleware setup
@@ -15,7 +18,9 @@ app.use(express.urlencoded({
 
 //main view
 app.get('/', (req, res) => {
-    res.send('homepage');
+    Place.find(function(err, result){
+        res.render('homepage',{ places: result });
+    });
 });
 
 //login view

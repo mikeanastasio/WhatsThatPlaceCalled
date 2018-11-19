@@ -1,1 +1,9 @@
-<h1>Sup fam</h1>
+<h1>Remember the restaurants</h1>
+
+<ul>
+    {{#each places as |place|}}
+        <li>
+            <div>{{place.name}}</div>
+            <div>{{place.description}}</div>
+        </li>
+</ul>
