@@ -16,7 +16,7 @@ const placeSchema = new mongoose.Schema({
     description: String,
     timePosted: String,
     address: String,
-    hasBeen: boolean
+    hasBeen: Boolean
 });
 
 //add schema to the model
