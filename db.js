@@ -1,4 +1,11 @@
 const mongoose = require('mongoose');
+const http = require ('http'); 
+
+
+// Here we find an appropriate database to connect to, defaulting to
+    // localhost if we don't find one.
+const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/theresfinder';
+
 
 //user schema
 const userSchema = new mongoose.Schema({
@@ -24,4 +31,11 @@ mongoose.model("User", userSchema);
 mongoose.model("Place", placeSchema);
 
 //connect
-mongoose.connect('mongodb://localhost/final', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost/final', { useNewUrlParser: true });
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
+});
