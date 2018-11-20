@@ -18,24 +18,32 @@ app.use(express.urlencoded({
 
 //main view
 app.get('/', (req, res) => {
-    new Place({
-        name: "Awesome restaurant",
-        description: "The food was good!",
-        timePosted: "11-10-1996",
-        address: "1 University Place",
-        hasBeen: true
-    }).save(function(err, article, count){
-        console.log('saving');
-        if(err){
-            console.log(err);
-        }else{
-            console.log('it worked!!');
-        }
-    });
     Place.find(function(err, result){
         console.log(err);
         console.log(result);
         res.render('homepage',{ places: result });
+    });
+});
+
+app.get('/add', (req,res) => {
+    res.render('add');
+});
+
+app.post('/add', (req, res) => {
+    let body = req.body;
+    new Place({
+        name: body.name,
+        description: body.description,
+        timePosted: "11-10-2018",
+        address: body.address,
+        hasBeen: false
+    }).save(function(err, article, count){
+        if(err){
+            console.log(err);
+            res.redirect('/');
+        }else{
+            res.redirect('/');
+        }
     });
 });
 
