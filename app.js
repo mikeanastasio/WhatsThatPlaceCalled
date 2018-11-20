@@ -54,6 +54,16 @@ app.get('/login', (req, res) => {
 
 //place view
 app.get('/place', (req, res) => {
+    /* Research topic pseudoCode
+    Place.find({query param}) to 
+    find the specific place that is needed
+    get place.location
+    make http request to url of googlemaps api
+    with slug of place.address
+    render the place hbs to show a google maps view
+    of the location of the place in which the 
+    user can also click to navigate on
+    */
     res.render('place');
 });
 
