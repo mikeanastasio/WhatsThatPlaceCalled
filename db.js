@@ -4,7 +4,7 @@ const http = require ('http');
 
 // Here we find an appropriate database to connect to, defaulting to
     // localhost if we don't find one.
-const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/theresfinder';
+const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://mikeanastasio:mymommy1@ds027348.mlab.com:27348/heroku_khll6xrx';
 
 
 //user schema
