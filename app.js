@@ -119,7 +119,7 @@ app.get('/', isLoggedIn, (req, res) => {
         let places = result;
         for(let i = 0; i<places.length; i++){
             let email = req.user.email;
-            let url = 'https://theresfinder.herokuapp.com/' + email + '/' + result[i].name;
+            let url = email + '/' + result[i].name;
             console.log(url);
             places[i].url = url;
         }
