@@ -10,11 +10,7 @@ li {
     font-size: 200%;
 }
 
-#information {
-    text-align: center;
-    font-size: 170%;
-    padding: 120%;
-}
+
 
 .listClicked {
     background-color: #898989;
@@ -55,6 +51,9 @@ li {
     text-align: right;
 }
 
+.listlinks {
+    color: #282828;
+}
 
 
 
