@@ -1,9 +1,62 @@
+<style>
+    #information{
+        text-align: center;
+        font-size: 170%;
+        padding: 40px ;
+    }
 
+    #map {
+        height: 400px;
+        width: 400px;
+        padding: 40px;
+    }
+</style>
+<div id="information">
 <h1 id="placename">{{info.name}}</h1>
-
-<div class="infofield">{{info.address}}</div>
+<div id="map"></div>
+<div class="infofield" id="address">{{info.address}}</div>
 <div class="infofield">{{info.description}}</div>
 
 <form method="POST" action="">
     <input type="submit" value="delete place">
 </form>
+</div>
+<footer>
+    <a href='/'>go home</a>
+</footer>
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+    var uluru = {lat: 40.7484, lng: 73.9857};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 10, center: uluru});
+
+    let geocoder = new google.maps.Geocoder();
+    let address = document.querySelector('#address');
+
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+        } else {
+            Document.querySelector('#map').style.display = "none";
+            console.log('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+
+ 
+}
+</script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4yopqICXOmtqQih2OCvY9ye_4-_d3Xk&callback=initMap">
+</script>

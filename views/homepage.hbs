@@ -7,18 +7,11 @@
     <ul id="neverBeen">
     {{#each places as |place|}}
         <li>
-            <a href="/{{place.url}}">{{place.name}}</a>
+            <a href="/{{place.url}}" class="listlinks">{{place.name}}</a>
         </li>
     {{/each}}
     </ul>
     <a href="/add" id="addPlace" class = "alert-link" >Add a new place!!</a>
-</div>
-
-
-<div id="popUpInfo">
-    <h1 id="placeName"></h1>
-    <h2 id="addresss"></h2>
-    <p id="description"></p>
 </div>
 
 <div id="username">
