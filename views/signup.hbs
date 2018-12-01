@@ -1,0 +1,21 @@
+<header>
+    <h1>Create an account!</h1>
+</header>
+<div class="signInUpForm">
+	{{#if message}}
+		<h3>{{ message }}</h3>
+	{{else}}
+		<h3>Sign Up!</h3>
+	{{/if}}
+	<form method="POST" action="">
+	<div>
+		<label for="email">email: </label>
+		<input type="text" id="email" name="email" value="">
+	</div>
+	<div>
+		<label for="password">password</label>
+		<input type="password" id="password" name="password" value="">
+	</div>
+	<input type="submit" value="SignUp">
+	</form>
+</div>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const http = require ('http'); 
-
+const bcrypt = require('bcrypt-nodejs');
 
 // Here we find an appropriate database to connect to, defaulting to
     // localhost if we don't find one.
@@ -9,9 +9,8 @@ const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongod
 
 //user schema
 const userSchema = new mongoose.Schema({
-    username: String,
-    hash: String,
     email: String,
+    password: String,
     favoriteColor: String,
     placesToGo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Place'}],
     placesBeen: [{type: mongoose.Schema.Types.ObjectId, ref: 'Place'}]
@@ -25,6 +24,14 @@ const placeSchema = new mongoose.Schema({
     address: String,
     hasBeen: Boolean
 });
+
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+};
 
 //add schema to the model
 mongoose.model("User", userSchema);

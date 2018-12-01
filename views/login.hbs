@@ -1,0 +1,22 @@
+<header>
+    <h1>Welcome to Restaurant Finder!!</h1>
+</header>
+<div class="signInUpForm">
+    <h2>Log In</h2>
+    {{#if message}}
+        <h3>{{ message }}</h3>
+    {{/if}}
+    <form method="POST" action="">
+    <div>
+        <label for="email">email: </label>
+        <input type="text" id="email" name="email" value="">
+    </div>
+    <div>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password" value="">
+    </div>
+    <input type="submit" value="LogIn">
+    </form>
+
+    <a href="/signup" id="signinbutton">Don't have an account? Sign Up!</a>
+</div>

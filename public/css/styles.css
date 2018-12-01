@@ -1,0 +1,50 @@
+header{
+    text-align: center;
+    padding: 15px;
+}
+body{
+    color: #282828;
+}
+
+li {
+    font-size: 200%;
+}
+
+.listClicked {
+    background-color: #898989;
+}
+
+#popUpInfo {
+    background-color: #717171;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display:none;
+}
+
+#firstColumn {
+    position: absolute;
+    left: 17%;
+    top: 10%;
+}
+
+.notDisplayed {
+    display: none;
+}
+
+#addPlace {
+    font-size: 175%;
+}
+
+.signInUpForm {
+    padding-left: 10%;
+    size: 125%;
+}
+
+#username {
+    position: absolute;
+    right:2%;
+    bottom:2%;
+    text-align: right;
+}

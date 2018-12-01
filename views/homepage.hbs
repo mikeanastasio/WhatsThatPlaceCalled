@@ -1,13 +1,33 @@
-<h1>Remember the restaurants</h1>
 
-<ul>
+<header>
+    <h1 id="titleName">Remember the restaurants</h1>
+</header>
+
+<div id="firstColumn" class="container">
+    <ul id="neverBeen">
     {{#each places as |place|}}
         <li>
             <div>{{place.name}}</div>
-            <div>{{place.address}}</div>
-            <div>{{place.description}}</div>
+            <div class="notDisplayed">{{place.address}}</div>
+            <div class="notDisplayed">{{place.description}}</div>
         </li>
     {{/each}}
-</ul>
+    </ul>
+    <a href="/add" id="addPlace" class = "alert-link" >Add a new place!!</a>
+</div>
 
-<a href="/add">Add a new place!!</a>
+
+<div id="popUpInfo">
+    <h1 id="placeName"></h1>
+    <h2 id="addresss"></h2>
+    <p id="description"></p>
+</div>
+
+<div id="username">
+    {{#if username}}
+    <div>{{username}}</div>
+    <a href="/logout">log out</a>
+    {{/if}}
+</div>
+
+<script src='home.js'></script>
