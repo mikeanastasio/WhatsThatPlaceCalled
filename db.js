@@ -22,7 +22,8 @@ const placeSchema = new mongoose.Schema({
     description: String,
     timePosted: String,
     address: String,
-    hasBeen: Boolean
+    hasBeen: Boolean,
+    userEmail: String
 });
 
 userSchema.methods.generateHash = function(password) {

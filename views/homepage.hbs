@@ -7,9 +7,7 @@
     <ul id="neverBeen">
     {{#each places as |place|}}
         <li>
-            <div>{{place.name}}</div>
-            <div class="notDisplayed">{{place.address}}</div>
-            <div class="notDisplayed">{{place.description}}</div>
+            <a href="/{{place.url}}">{{place.name}}</a>
         </li>
     {{/each}}
     </ul>
@@ -25,7 +23,7 @@
 
 <div id="username">
     {{#if username}}
-    <div>{{username}}</div>
+    <div id="usernametext">{{username}}</div>
     <a href="/logout">log out</a>
     {{/if}}
 </div>

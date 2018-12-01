@@ -48,3 +48,13 @@ li {
     bottom:2%;
     text-align: right;
 }
+
+#placename {
+    font-size: 175%;
+    padding: 150%;
+    text-align: center;
+}
+.infofield {
+    font-size: 175%;
+    text-align: center;
+}

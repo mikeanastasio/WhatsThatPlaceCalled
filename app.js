@@ -111,15 +111,19 @@ function isLoggedIn(req, res, next) {
     res.redirect('/login');
 }
 
-
 //main view
 app.get('/', isLoggedIn, (req, res) => {
-    Place.find(function(err, result){
-        result.forEach(function(place){
-
-        });
+    Place.find({ userEmail:req.user.email }, function(err, result){
         console.log(err);
-        console.log(result);
+        console.log(result[0]);
+        let places = result;
+        for(let i = 0; i<places.length; i++){
+            let email = req.user.email;
+            let url = '/' + email + '/' + result[i].name;
+            console.log(url);
+            places[i].url = url;
+        }
+        console.log(places[0]);
         res.render('homepage',{ places: result , username: req.user.email });
     });
 });
@@ -130,17 +134,19 @@ app.get('/add', isLoggedIn, (req,res) => {
 
 app.post('/add', (req, res) => {
     let body = req.body;
+    console.log(req.user.email);
     new Place({
         name: body.name,
         description: body.description,
         timePosted: "11-10-2018",
         address: body.address,
-        hasBeen: false
-    }).save(function(err, article, count){
-        if(err){
-            console.log(err);
-            res.redirect('/');
+        hasBeen: false,
+        userEmail: req.user.email
+    }).save(function(err, user, count) {
+        if(err) {
+            console.log(err)
         }else{
+            console.log('added new place');
             res.redirect('/');
         }
     });
@@ -173,7 +179,7 @@ app.get('/logout', isLoggedIn, (req, res) => {
 });
 
 //place view
-app.get('/place', isLoggedIn, (req, res) => {
+app.get('/:slug1/:slug2', isLoggedIn, (req, res) => {
     /* Research topic pseudoCode
     Place.find({query param}) to 
     find the specific place that is needed
@@ -184,7 +190,37 @@ app.get('/place', isLoggedIn, (req, res) => {
     of the location of the place in which the 
     user can also click to navigate on
     */
-    res.render('place');
+    if(req.params.slug1 === req.user.email){
+        Place.find({name: req.params.slug2}, function(err, result) {
+            if(err){
+                console.log(err);
+                res.redirect('/');
+            }else{
+                console.log(result[0].name);
+                res.render('place', {info: result[0]});
+            }
+        });
+    }else{
+        res.redirect('/');
+    }
+});
+
+app.post('/:slug1/:slug2', isLoggedIn, (req, res) => {
+    if(req.params.slug1 === req.user.email){
+        Place.find({name: req.params.slug2}, function(err, result) {
+            if(err){
+                console.log(err);
+                res.redirect('/');
+            }
+        }).deleteOne(function(err){
+            if(err){
+                console.log(err);
+            }
+            res.redirect('/');
+        });
+    }else{
+        res.redirect('/');
+    }
 });
 
 app.listen(port, function() {
